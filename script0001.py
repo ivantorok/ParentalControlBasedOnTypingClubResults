@@ -1,0 +1,24 @@
+import requests
+
+# Fill in your details here to be posted to the login form.
+payload = {
+    'username': 'botond@torokcsalad.hu',
+    'password': 'qwert1'
+}
+
+# Use 'with' to ensure the session context is closed after use.
+with requests.Session() as s:
+    p = s.post('https://www.typingclub.com/login/', data=payload)
+    # print the html returned or something more intelligent to see if it's a successful login page.
+    print (p.text)
+
+    # An authorised request.
+    r = s.get('https://www.typingclub.com/typing-qwerty-en.html')
+    print (r.text)
+f = open("test.txt","a") #opens file with name of "test.txt"
+f.write(r.text)
+f.close()
+        
+import re
+m = re.search('\STAT(.*[\n].*[\n].*[\n].*[\n].*[\n].*[\n].*)',r.text)
+print (m.group(0))

@@ -13,10 +13,11 @@ with requests.Session() as s:
 
     # An authorised request.
     r = s.get('https://www.typingclub.com/typing-qwerty-en.html')
+textToParse = r.text
 f = open("test.txt","a") #opens file with name of "test.txt"
 f.write(r.text)
 f.close()
         
 import re
-m = re.search('\STAT(.*[\n].*[\n].*[\n].*[\n].*[\n].*[\n].*)',r.text)
+m = re.search("\(?<=div class=\'stat\'>)(.*)(?=<\/div>)",textToParse)
 print (m.group(0))

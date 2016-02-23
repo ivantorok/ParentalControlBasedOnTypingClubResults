@@ -12,12 +12,11 @@ with requests.Session() as s:
     # print the html returned or something more intelligent to see if it's a successful login page.
 
     # An authorised request.
-    r = s.get('https://www.typingclub.com/typing-qwerty-en.html')
+r = s.get('https://www.typingclub.com/typing-qwerty-en.html')
 textToParse = r.text
-f = open("test.txt","a") #opens file with name of "test.txt"
+f = open("test.txt","w") #opens file with name of "test.txt"
 f.write(r.text)
 f.close()
-        
 import re
-m = re.search("\(?<=div class=\'stat\'>)(.*)(?=<\/div>)",textToParse)
+m = re.search('(?<=, "score"..)(\d*)(?=, "stars"..)',textToParse)
 print (m.group(0))

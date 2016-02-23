@@ -99,7 +99,7 @@ var STATIC_URL = "//static.typingclub.com/m/";
             data.addRows(1);
            
             
-                data.setValue(0, 0, "2 hours, 58 minutes ago");
+                data.setValue(0, 0, "3 hours, 27 minutes ago");
                 data.setValue(0, 1, 56);
             
             var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));

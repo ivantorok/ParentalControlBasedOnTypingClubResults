@@ -18,5 +18,8 @@ f = open("test.txt","w") #opens file with name of "test.txt"
 f.write(r.text)
 f.close()
 import re
-m = re.search('(?<=, "score"..)(\d*)(?=, "stars"..)',textToParse)
+m = re.search('(?<=, "score"..)(\d*)',textToParse)
 print (m.group(0))
+nm = re.search('(?<=, "stars"..)(\d*)',textToParse)
+print (nm.group(0))
+

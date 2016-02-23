@@ -2,8 +2,8 @@ import requests
 
 # Fill in your details here to be posted to the login form.
 payload = {
-    'username': 'botond@torokcsalad.hu',
-    'password': 'qwert1'
+    'username': 'b611742@trbvn.com',
+    'password': 'b611742@trbvn.comb611742@trbvn.com'
 }
 
 # Use 'with' to ensure the session context is closed after use.

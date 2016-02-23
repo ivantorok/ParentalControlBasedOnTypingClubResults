@@ -10,11 +10,9 @@ payload = {
 with requests.Session() as s:
     p = s.post('https://www.typingclub.com/login/', data=payload)
     # print the html returned or something more intelligent to see if it's a successful login page.
-    print (p.text)
 
     # An authorised request.
     r = s.get('https://www.typingclub.com/typing-qwerty-en.html')
-    print (r.text)
 f = open("test.txt","a") #opens file with name of "test.txt"
 f.write(r.text)
 f.close()

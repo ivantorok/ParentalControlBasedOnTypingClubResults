@@ -16,10 +16,16 @@ r = s.get('https://www.typingclub.com/typing-qwerty-en.html')
 textToParse = r.text
 import re
 m = re.search('(?<=, "score"..)(\d*)',textToParse)
-current_score_value = m.group(0) + '\n' 
+current_score_value = m.group(0) + ' ' 
 nm = re.search('(?<=, "stars"..)(\d*)',textToParse)
-current_stars_value = nm.group(0) + '\n'
-f = open("test.txt","w") #opens file with name of "test.txt"
+current_stars_value = nm.group(0)
+
+import time
+DateTimeStamp = time.strftime("%Y-%m-%d %X ")
+
+
+f = open("test.txt","a") #opens file with name of "test.txt"
+f.write(DateTimeStamp)
 f.write(current_score_value)
 f.write(current_stars_value)
 

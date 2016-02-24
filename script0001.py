@@ -14,12 +14,14 @@ with requests.Session() as s:
     # An authorised request.
 r = s.get('https://www.typingclub.com/typing-qwerty-en.html')
 textToParse = r.text
-f = open("test.txt","w") #opens file with name of "test.txt"
-f.write(r.text)
-f.close()
 import re
 m = re.search('(?<=, "score"..)(\d*)',textToParse)
-print (m.group(0))
+current_score_value = m.group(0) + '\n' 
 nm = re.search('(?<=, "stars"..)(\d*)',textToParse)
-print (nm.group(0))
+current_stars_value = nm.group(0) + '\n'
+f = open("test.txt","w") #opens file with name of "test.txt"
+f.write(current_score_value)
+f.write(current_stars_value)
+
+f.close()
 

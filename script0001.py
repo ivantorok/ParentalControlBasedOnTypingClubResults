@@ -21,7 +21,7 @@ nm = re.search('(?<=, "stars"..)(\d*)',textToParse)
 current_stars_value = nm.group(0)
 
 import time
-DateTimeStamp = time.strftime("%Y-%m-%d %X ")
+DateTimeStamp = '\n' + time.strftime("%Y-%m-%d %X ")
 
 
 f = open("test.txt","a") #opens file with name of "test.txt"
